@@ -251,9 +251,9 @@ sendButton.addEventListener("click", (e) => {
                 QR.makeCode(qrText);
                 let newHtmlCodeFam = `
                     <h3> ${nombre}</h3>
-                    <h5>Tu mesa es ${mesa}</h5>
-                    <h5>Tienes: ${personas} pases</h5>
-                    <h5>Tus pases para el baile son: ${personas}<h5/>
+                    <h5>Tu mesa es <span class="span-text-modal">${mesa}</span> </h5>
+                    <h5>Tienes: <span class="span-text-modal">${personas}</span> pases</h5>
+                    <h5>Tus pases para el baile son: <span class="span-text-modal">${personas}</span><h5/>
                     <h4>Recuerda que la entrada al baile es 6:00 pm<h4/>`;
                 confirmarFamilia.innerHTML += newHtmlCodeFam;
             }
