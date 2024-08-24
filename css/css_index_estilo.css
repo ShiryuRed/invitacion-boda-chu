@@ -4,7 +4,8 @@
 }
 body {
 	font-size: 24px;
-	font-family: 'Dancing Script', cursive;
+	/* font-family: 'Dancing Script', cursive; */
+	font-family: "Satisfy", cursive;
 	transition: background .4s, color .4s;
 	/* background-color: #fff; */
 	background-image: url('../multimedia/images/background.png');
@@ -67,7 +68,7 @@ a {
 	--background-open-menu: #eefc;
 	--background-qr: #0000;
 	--text-color: #211c18;
-	--text-color-dorado: #FFA500;
+	--text-color-dorado: #6d0006;
 	--text-color-dorado-var-1: #FFA500;
 	--text-color-dorado-var-2: #211c18;
 	--text-color-hover: #E4E9F7;
@@ -182,7 +183,7 @@ body.dark{
 	margin-bottom: 20px;
 	margin-left: 10px;
 	font-size: 40px;
-	background: #1338;
+	background: #ffffff;
 	color: var(--text-color-dorado);
 	border-radius: 28px;
 	padding: 15px;
