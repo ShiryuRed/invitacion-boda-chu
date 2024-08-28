@@ -242,20 +242,30 @@ sendButton.addEventListener("click", (e) => {
             let nombre = invitados[qrId]["nombre"];
             let personas = invitados[qrId]["personas"];
             let mesa = invitados[qrId]["mesa"];
+            let pases = invitados[qrId]['baile']
         
-            let qrText =`Fam: ${nombre}, Pases: ${personas}, Mesa: ${mesa} pases baile: 40900000`;
+            let qrText =`Fam: ${nombre}, Pases: ${personas}, Mesa: ${mesa}, Pase baile ${pases}`;
             let confirmar = confirm(`¿Confirmar ${number} como numero de invitacion?`);
             if (confirmar) {
                 confirmInfo.removeChild(sendButton);
                 qrContainerStyle.classList.add("anim-qr");
                 QR.makeCode(qrText);
-                let newHtmlCodeFam = `
+                if (pases == '0') {
+                    let newHtmlCodeFam = `
+                    <h3> ${nombre}</h3>
+                    <h5>Tu mesa es <span class="span-text-modal">${mesa}</span> </h5>
+                    <h5>Tienes: <span class="span-text-modal">${personas}</span> pases</h5>`;
+                confirmarFamilia.innerHTML += newHtmlCodeFam;
+                } if (pases != '0') {
+                    let newHtmlCodeFam = `
                     <h3> ${nombre}</h3>
                     <h5>Tu mesa es <span class="span-text-modal">${mesa}</span> </h5>
                     <h5>Tienes: <span class="span-text-modal">${personas}</span> pases</h5>
                     <h5>Tus pases para el baile son: <span class="span-text-modal">${personas}</span><h5/>
                     <h4>Recuerda que la entrada al baile es 6:00 pm<h4/>`;
-                confirmarFamilia.innerHTML += newHtmlCodeFam;
+                    confirmarFamilia.innerHTML += newHtmlCodeFam;
+                }
+                
             }
         }
     }
@@ -300,7 +310,6 @@ for (let i = 0; i <= 150; i++) {
     document.write(loc + `<br>`)
 }*/
 
-
 // for (let i = 0; i <= invitados.length; i++) {
 //     let loc = (1237 + i) * 4 ;
 //     let nombre = invitados[i]["nombre"]
@@ -312,14 +321,10 @@ for (let i = 0; i <= 150; i++) {
 // }
 
 
-
-
-
-
-const invitados = [{ nombre: "Migue&Fani", personas: "2", mesa: "Principal"}   
-,{nombre: "Lopez Santos", personas: "2", mesa: "A4"}
-,{ nombre: "Vicente Santos", personas: "3", mesa: "A4"}
-,{ nombre: "Alejandro Santos", personas: "5", mesa: "A4"}
+const invitados = [{nombre: "Concha Mendez", personas: "3", mesa: "1", baile: "0"}   
+,{nombre: "Garcia Visencio", personas: "4", mesa: "1", baile: "6", baile: "0"}
+,{ nombre: "Vicente Santos", personas: "3", mesa: "A4" , baile: "0"}
+,{ nombre: "Alejandro Santos", personas: "5", mesa: "A4", baile: "0"}
 ,{ nombre: "Benjamin Frankis", personas: "3", mesa: "C3"}
 ,{ nombre: "Empty", personas: "cancelado", mesa: "00"}
 ,{ nombre: "Nancy Matus", personas: "3", mesa: "E5"} 
@@ -329,7 +334,7 @@ const invitados = [{ nombre: "Migue&Fani", personas: "2", mesa: "Principal"}
 ,{ nombre: "Liz Garcia", personas: "4", mesa: "B5"}
 ,{ nombre: "Olga Santos", personas: "1", mesa: "B5"}
 ,{ nombre: "Izquierdo Hernandez", personas: "4", mesa: "D2"} 
-,{ nombre: "Pech Izquierdo", personas: "2",  mesa: "D2"}
+,{ nombre: "Pech Izquierdo", personas: "2",  mesa: "D2", baile: "1"}
 ,{ nombre: "Rocha Tapia", personas: "3", mesa: "E2"}
 ,{ nombre: "Mello", personas: "3", mesa: "D5"}
 ,{ nombre: "Tapia Hernandez", personas: "2", mesa: "B2"}
@@ -436,4 +441,5 @@ const invitados = [{ nombre: "Migue&Fani", personas: "2", mesa: "Principal"}
 ,{ nombre: "EMPTY", personas: "0", mesa: "00"}
 ,{ nombre: "EMPTY", personas: "0", mesa: "00"}
 ,{ nombre: "EMPTY", personas: "0", mesa: "00"}
-,{ nombre: "Hernandez Juarez", personas: "4", mesa: "C1"}];
+,{ nombre: "Hernandez Juarez", personas: "4", mesa: "C1"}
+];
