@@ -250,19 +250,19 @@ sendButton.addEventListener("click", (e) => {
                 confirmInfo.removeChild(sendButton);
                 qrContainerStyle.classList.add("anim-qr");
                 QR.makeCode(qrText);
-                if (pases == '0') {
+                if (pases == '0' || pases == undefined) {
                     let newHtmlCodeFam = `
                     <h3> ${nombre}</h3>
-                    <h5>Tu mesa es <span class="span-text-modal">${mesa}</span> </h5>
+                    <h5>Tu mesa es: <span class="span-text-modal">${mesa}</span> </h5>
                     <h5>Tienes: <span class="span-text-modal">${personas}</span> pases</h5>`;
                 confirmarFamilia.innerHTML += newHtmlCodeFam;
                 } if (pases != '0') {
                     let newHtmlCodeFam = `
                     <h3> ${nombre}</h3>
-                    <h5>Tu mesa es <span class="span-text-modal">${mesa}</span> </h5>
+                    <h5>Tu mesa es: <span class="span-text-modal">${mesa}</span> </h5>
                     <h5>Tienes: <span class="span-text-modal">${personas}</span> pases</h5>
                     <h5>Tus pases para el baile son: <span class="span-text-modal">${personas}</span><h5/>
-                    <h4>Recuerda que la entrada al baile es 6:00 pm<h4/>`;
+                    <h4>Recuerda que la entrada al baile es 5:30 pm<h4/>`;
                     confirmarFamilia.innerHTML += newHtmlCodeFam;
                 }
                 
@@ -322,28 +322,28 @@ for (let i = 0; i <= 150; i++) {
 
 
 const invitados = [{nombre: "Concha Mendez", personas: "3", mesa: "1", baile: "0"}   
-,{nombre: "Garcia Visencio", personas: "4", mesa: "1", baile: "6", baile: "0"}
-,{ nombre: "Vicente Santos", personas: "3", mesa: "A4" , baile: "0"}
-,{ nombre: "Alejandro Santos", personas: "5", mesa: "A4", baile: "0"}
-,{ nombre: "Benjamin Frankis", personas: "3", mesa: "C3"}
-,{ nombre: "Empty", personas: "cancelado", mesa: "00"}
-,{ nombre: "Nancy Matus", personas: "3", mesa: "E5"} 
-,{ nombre: "Fran", personas: "3",  mesa: "E5"}
-,{ nombre: "Garcia Santos", personas: "3", mesa: "B5"}
-,{ nombre: "Viany Garcia Santos", personas: "2", mesa: "B5"}
-,{ nombre: "Liz Garcia", personas: "4", mesa: "B5"}
-,{ nombre: "Olga Santos", personas: "1", mesa: "B5"}
-,{ nombre: "Izquierdo Hernandez", personas: "4", mesa: "D2"} 
-,{ nombre: "Pech Izquierdo", personas: "2",  mesa: "D2", baile: "1"}
-,{ nombre: "Rocha Tapia", personas: "3", mesa: "E2"}
-,{ nombre: "Mello", personas: "3", mesa: "D5"}
-,{ nombre: "Tapia Hernandez", personas: "2", mesa: "B2"}
-,{ nombre: "Arely Aguilar", personas: "1", mesa: "A5"}
-,{ nombre: "Martinez Vidal", personas: "4", mesa: "C2"} 
-,{ nombre: "Flores Tapia", personas: "4", mesa: "E2"} 
-,{ nombre: "Eunice Tapia", personas: "1",  mesa: "B2"}
-,{ nombre: "Rosalba Tapia", personas: "1", mesa: "B2"}
-,{ nombre: "Torres Tapia", personas: "4", mesa: "D1"}
+,{nombre: "Garcia Visencio", personas: "4", mesa: "1", baile: "6"}
+,{ nombre: "Gonzalez Rivera", personas: "3", mesa: "1" , baile: "3"}
+,{ nombre: "Campos Ruiz", personas: "5", mesa: "2", baile: "5"}
+,{ nombre: "Ruiz Garcia", personas: "2", mesa: "2", baile: "0"}
+,{ nombre: "Ruiz Flores", personas: "2", mesa: "2", baile: "0"}
+,{ nombre: "Vergara Concha", personas: "2", mesa: "3", baile: "0"} 
+,{ nombre: "Barela Concha", personas: "4",  mesa: "3", baile: "0"}
+,{ nombre: "Ruben Concha", personas: "1", mesa: "3", baile: "0"}
+,{ nombre: "Rosario Rivera", personas: "1", mesa: "3", baile: "0"}
+,{ nombre: "Soledad Rivera", personas: "1", mesa: "3", baile: "0"}
+,{ nombre: "Felipa Morales", personas: "1", mesa: "3", baile: "0"}
+,{ nombre: "Campos Fierro", personas: "5", mesa: "4", baile: "0"} 
+,{ nombre: "Campos Palacio", personas: "4",  mesa: "4", baile: "0"}
+,{ nombre: "Lore Merino", personas: "2", mesa: "5", baile: "0"}
+,{ nombre: "Hernandez Ruiz", personas: "4", mesa: "5", baile: "0"}
+,{ nombre: "Tapia Hernandez", personas: "2", mesa: "B2", baile: "0"}
+,{ nombre: "Arely Aguilar", personas: "1", mesa: "A5", baile: "0"}
+,{ nombre: "Martinez Vidal", personas: "4", mesa: "C2", baile: "0"} 
+,{ nombre: "Flores Tapia", personas: "4", mesa: "E2", baile: "0"} 
+,{ nombre: "Eunice Tapia", personas: "1",  mesa: "B2", baile: "0"}
+,{ nombre: "Rosalba Tapia", personas: "1", mesa: "B2", baile: "0"}
+,{ nombre: "Torres Tapia", personas: "4", mesa: "D1", baile: "0"}
 ,{ nombre: "Morales Garcia", personas: "3", mesa: "A3"}
 ,{ nombre: "De Jesus Reyes", personas: "2", mesa: "D3"}
 ,{ nombre: "Garin", personas: "4", mesa: "A3"}
